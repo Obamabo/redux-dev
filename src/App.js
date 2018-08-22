@@ -4,7 +4,7 @@ import { addGun, removeGun, addGunAsync } from './index.redux';
 
 @connect(
     // 你要state什么属性放到props里
-    state => ({num:state}),
+    state => ({num:state.counter}),
     // 你要什么方法，放到props里，自动dispatch
     { addGun, removeGun, addGunAsync }
 )
@@ -20,10 +20,5 @@ class App extends React.Component {
         )
     }
 }
-// const mapStateToProps = (state) => {
-//     return { num:state }
-// }
-// const actionCreators = { addGun, removeGun, addGunAsync };
 
-// App = connect(mapStateToProps, actionCreators)(App);
 export default App;
