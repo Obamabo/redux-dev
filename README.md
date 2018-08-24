@@ -7,7 +7,7 @@
 4、在项目中执行命令：npm run start，启动前端服务；<br/>
 5、在server目录下执行：nodemon server.js，启动后端服务；如果可以正常访问http://localhost:9093/ 端口，说明服务已经跑起来了；此时，直接访问接口：http://localhost:9093/data 只会看到一个空数组；<br/>
 6、增删改数据库中的数据：<br/> 
-![](https://raw.githubusercontent.com/Obamabo/redux-dev/master/imgs/mongodb.png)<br/>
+![](https://raw.githubusercontent.com/Obamabo/redux-dev/master/imgs/mongodb.png) <br/>
 如截图中代码所示，如果你想要添加一条数据，直接解除下面这部分代码的注释：
       <pre>
         User.create({
@@ -21,7 +21,7 @@
             }
         })
       </pre>
-修改user和age，每次保存，刷新http://localhost:9093/data 页面都可以看到新添加的一条数据添加，例如下所示：<br/> ![](https://raw.githubusercontent.com/Obamabo/redux-dev/master/imgs/data.png)<br/>
+修改user和age，每次保存，刷新http://localhost:9093/data 页面都可以看到新添加的一条数据添加，例如下所示：<br/> ![](https://raw.githubusercontent.com/Obamabo/redux-dev/master/imgs/data.png) <br/>
 移除数据和修改数据类比新增数据，注意：<br/>
 1> 增删改的时候，注意单一进行一个操作，然后注释其他的操作，不然数据会多个操作同事进行；<br/>
 2> 查找数据库的方法是find和findeOne；<br/>
