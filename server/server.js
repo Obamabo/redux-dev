@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 // // 连接mongo 并且使用imooc这个集合
-const DB_URL = 'mongodb://127.0.0.1:27017/junbo';
+const DB_URL = 'mongodb://127.0.0.1:27017/new_1';
 mongoose.connect(DB_URL, { useNewUrlParser: true });
 // 连接
 mongoose.connection.on('connected', function() {
@@ -18,8 +18,8 @@ const User = mongoose.model('user', new mongoose.Schema({
 }))
 // 新增数据
 // User.create({
-//     user: 'chenjunbo',
-//     age: 26
+//     user: 'xiaoming',
+//     age: 16
 // }, function(err, doc) {
 //     if(!err) {
 //         console.log(doc);
@@ -27,19 +27,23 @@ const User = mongoose.model('user', new mongoose.Schema({
 //         console.log(err);
 //     }
 // })
-// User.remove({age:10}, function(err,doc) {
+
+// 移除数据
+// User.remove({user:'xiaoming'}, function(err,doc) {
 //     console.log(doc);
 // })
-// User.update({'user':'chenjunbo'},{'$set':{age:18}},function(err,doc) {
+
+// 更新数据
+// User.update({'user':'xiaoming'},{'$set':{age:18}},function(err,doc) {
     // console.log(doc);
 // })
 // 新建app
 const app = express();
 app.get('/', function(req, res) {
-    res.send('<h1>hello world</h1>')
+    res.send('<h1>后端服务启动~</h1>')
 })
 app.get('/data', function(req, res) {
-    User.findOne({'user': 'chenjunbo'}, function(err, doc) {
+    User.find({}, function(err, doc) {
         res.json(doc);
     })
 })
