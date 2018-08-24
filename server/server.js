@@ -43,7 +43,7 @@ app.get('/', function(req, res) {
     res.send('<h1>后端服务启动~</h1>')
 })
 app.get('/data', function(req, res) {
-    User.find({}, function(err, doc) {
+    User.findOne({user:"xiaoming"}, function(err, doc) {
         res.json(doc);
     })
 })
